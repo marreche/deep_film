@@ -10,5 +10,6 @@
 ## Info
 --- 
 
-This project consists of a Movie Recommender System using the [MovieLens Full Dataset](https://grouplens.org/datasets/movielens/latest/).
-This dataset contains 27,000,000 ratings and 1,100,000 tag applications applied to 58,000 movies by 280,000 users. It also includes tag genome data with 14 million relevance scores across 1,100 tags.
+This project consists of a Movie Recommender System using [The Movies Dataset](https://www.kaggle.com/rounakbanik/the-movies-dataset) from kaggle.  
+
+This dataset contains metadata for all 45,000 movies listed in the Full MovieLens Dataset. As well as 26 million ratings from 270,000 users for all 45,000 movies. Ratings are on a scale of 1-5 and have been obtained from the official GroupLens website.
