@@ -1,13 +1,13 @@
 # deep_film
 
-
+* [About](#About)
 ## <div align="center"> Movie Recommendation System </div>
 
 ---
 
 ![Alt](/images/movies_collage.jpg "Movies")
 
-## Info
+## About
 --- 
 
 This project consists of a Movie Recommender System using [The Movies Dataset](https://www.kaggle.com/rounakbanik/the-movies-dataset) from kaggle.  
