@@ -1,4 +1,4 @@
-# <div align="center"> deep_film </div>
+# <div align="center"> :movie_camera: deep_film </div>
 
 ![Alt](/images/movies_collage.jpg "Movies")
 
@@ -21,4 +21,4 @@ This dataset contains metadata for all 45,000 movies listed in the Full MovieLen
 ## :key: License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-<p align="right">(<a href="#top">Back to top<p>&#11014;</p></a>)</p>
+<div align="right"><a href="#top">&#11014; Back to top</a></div>
