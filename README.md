@@ -53,4 +53,4 @@ mauriarrechea@gmail.com
 ## :key: License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-<div align="right"><a href="#top">&#11014; Back to top</a></div>
+<div align="right"><a href="#scroll-table-of-contents">&#11014; Back to contents</a></div>
