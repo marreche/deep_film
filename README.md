@@ -21,7 +21,7 @@ This dataset contains metadata for all 45,000 movies listed in the Full MovieLen
 
 I chose to use a Singular Value Decomposition (SVD) model as it harnessed the best results. Although I also used K-Nearest Neighbours (KNN) to test its capabilties.
 
-## :bulb: Movie Recommender
+## :film_strip: Movie Recommender
 
 To use my recommendation system you must first rate the five films on a scale from 1 to 5. After completion, the model will calculate the 5 best rated movies that fit your preferences. 
 
