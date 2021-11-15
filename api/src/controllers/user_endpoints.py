@@ -6,9 +6,12 @@ from src.utils.json_response import serialize
 @app.route("/add",  methods = ["GET", 'POST'])
 @serialize
 def add():
-    rating = request.form.get('rating')
+    rating = request.args.get('rating')
+    userId = ratings_new.find().distinct('userId')[-1] + 1
+    ##movieId = 
     ratings_new.insert_one(
-        {   "userId" : 1,
-            "rating": rating
+        {   "userId" : userId,
+            ##"movieId" : movieId
+            "rating": float(rating)
     })
     return {"state": "Rating successfully added!"}
