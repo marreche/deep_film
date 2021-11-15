@@ -2,24 +2,24 @@ from src.app import app
 from src.utils.mongo_connection import movies_metadata
 from flask import request
 from src.utils.json_response import serialize
-
+import json
 
 @app.route("/movies")
 @serialize
 def movies():
-    all_movies = list(movies_metadata.find({}))
+    all_movies = list(movies_metadata.find({}, {"_id": 0, "homepage": 0, "belongs_to_collection": 0}))
     return {"all_movies" : all_movies}
 
 @app.route("/movies/search")
 @serialize
 def search_movies():
     pattern = request.args.get("name")
-    pattern = f".*{pattern.lower()}.*"
+    pattern_format = f".*{pattern.lower()}.*"
     res = movies_metadata.find(
-        {"original_title": {"$regex": pattern, "$options": "i"}}, 
-        {"original_title": 1, "_id": 0, "release_date": 1})
+        {"original_title": {"$regex": pattern_format, "$options": "i"}}, 
+        {"_id": 0, "homepage": 0, "belongs_to_collection": 0})
         
-    return ({"Results": res})
+    return {f"{pattern}" : res}
 
 @app.route("/movies/poster")
 @serialize
