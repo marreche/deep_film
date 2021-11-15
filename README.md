@@ -6,12 +6,12 @@
 
 ## :scroll: Table of Contents
 
-* [About](#about)
-* [Movie Recommender](#movierecommender)
-* [API](#api)
-* [Resources](#resources)
-* [Contact](#contact)
-* [License](#license)
+* [About](#newspaper-about)
+* [Movie Recommender](#film_strip-movie-recommender)
+* [API](#bulb-api)
+* [Resources](#notebook_with_decorative_cover-resources)
+* [Contact](#envelope-contact)
+* [License](#key-license)
 
 ## :newspaper: About
 
