@@ -42,11 +42,11 @@ To use my recommendation system you must first rate the five films on a scale fr
 
 ## :notebook_with_decorative_cover: Resources
 
-[Surprise docs](https://surprise.readthedocs.io/en/stable/)
+[Surprise](https://surprise.readthedocs.io/en/stable/)
 
-[Ibtesam Ahmed's "Getting Started with a Movie Recommendation System" notebook](https://www.kaggle.com/ibtesama/getting-started-with-a-movie-recommendation-system)  
+[Ibtesam Ahmed's "Getting Started with a Movie Recommendation System"](https://www.kaggle.com/ibtesama/getting-started-with-a-movie-recommendation-system)  
 
-[Rounak Banik's "Movie Recommender Systems" notebook](https://www.kaggle.com/rounakbanik/movie-recommender-systems)
+[Rounak Banik's "Movie Recommender Systems"](https://www.kaggle.com/rounakbanik/movie-recommender-systems)
 ## :envelope: Contact
 
 mauriarrechea@gmail.com

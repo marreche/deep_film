@@ -19,7 +19,7 @@ def search_movies():
         {"original_title": {"$regex": pattern, "$options": "i"}}, 
         {"original_title": 1, "_id": 0, "release_date": 1})
         
-    return ({f"{pattern}": res})
+    return ({"Results": res})
 
 @app.route("/movies/poster")
 @serialize
