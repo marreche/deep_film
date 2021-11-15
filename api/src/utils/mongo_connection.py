@@ -13,3 +13,4 @@ credits = db.credits
 keywords = db.keywords
 links = db.links_small
 ratings = db.ratings_small
+ratings_new = db.ratings_new
