@@ -8,7 +8,7 @@ movies['overview'] = movies['overview'].fillna('')
 
 tfidf = TfidfVectorizer(stop_words= 'english')
 tfidf_matrix = tfidf.fit_transform(movies['overview'])
-tfidf_matrix = tfidf_matrix[:20000]
+tfidf_matrix = tfidf_matrix[:23000]
 
 cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
 
