@@ -10,7 +10,7 @@
 * [Movie Recommender](#film_strip-movie-recommender)
 * [API](#bulb-api)
     * [Endpoints](#endpoints)
-* [Dashboard](#streamlit-dashboard)
+* [Dashboard](#clipboard-streamlit-dashboard)
 * [Resources](#notebook_with_decorative_cover-resources)
 * [Contact](#envelope-contact)
 * [License](#key-license)
@@ -48,7 +48,7 @@ This project is complemented by its own API acting as an intermmediary between t
     - userId -> Introduce userId. (Optional)
     - movieId -> Introduce movieId. (Required)
 
-## Streamlit Dashboard
+## :clipboard: Streamlit Dashboard
 
 The implementation of the Deep Film recommender system is hosted on a Streamlit dashboard.
 
