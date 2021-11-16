@@ -23,7 +23,7 @@ The deep_film recommender system is supplemented by its very own MongoAtlas data
 
 deep_film uses a Singular Value Decomposition (SVD) model as it harnessed the best results. K-Nearest Neighbours (KNN) was also tested. 
 
-If you wish to know more about this project and the development process don't hesitate to send me an [email](mauriarrechea@gmail.com).
+If you wish to know more about this project and the development process don't hesitate to send me an [email](#envelope-contact).
 
 ## :film_strip: Movie Recommender System
 
