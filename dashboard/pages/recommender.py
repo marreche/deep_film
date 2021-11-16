@@ -1,39 +1,31 @@
 import streamlit as st
-from support.api_connection import get_movies
+from support.movie_df_creation import movies_df
+from support.api_connection import insert_ratings
+import numpy as np
+
+
+def get_five_random_movies():
+    five = movies_df.sample(5)
+    return five
+
+movies = get_five_random_movies()
+movieId = []
+rating_array = []
+userId = np.random.randint(1, 1000)
+
 
 def recommender():
     title = st.title("Recommender")
-    start = st.button("Start Rating Movies", key="start_button")
-    if start:
-        img =  "https://m.media-amazon.com/images/I/71AzwgLT2WL._AC_SY679_.jpg"
-        if 'img' not in st.session_state:
-            st.session_state.img = "https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_FMjpg_UX1000_.jpg"
+    for i in range(len(movies)):
+        img = movies.iloc[i]['poster_path']
+        movieId.append(movies.iloc[i]['movieId'])
         st.image(img)
-        slider = st.slider("Rate Movie", min_value=0, max_value=5, value=3, step=1, key= 'slider')
-        next_movie = st.button('Next Movie')
-        if next_movie:
-            st.session_state.img = "https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_FMjpg_UX1000_.jpg"
-            st.image(st.session_state.img)
-            slider_two = st.slider("Rate Movie", min_value=0, max_value=5, value=3, step=1, key= 'slider_two')
-            next_movie = st.button('Next Movie',key="button_two")
-
-
+        rating_array.append(st.slider("Rate Movie", min_value=0, max_value=5, key= f"rating {i}"))
+        
+        
+    movieIds = movieId[:5]
+    ratings = rating_array[-5:]
+    if st.button("Get recommendation"):
+        for i in range(len(movieIds)):
+            insert_ratings(ratings[i], movieIds[i], userId=userId)
     
-    
-    
-    
-    
-    
-    # if 'img' not in st.session_state:
-    #     st.session_state.img = "https://m.media-amazon.com/images/I/71AzwgLT2WL._AC_SY679_.jpg"
-    # slider = st.slider("Rate Movie", min_value=0, max_value=5, value=3, step=1, key= 'slider')
-    # next = st.button("Next Movie")
-    # if next:
-    #     st.session_state.img = "https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_FMjpg_UX1000_.jpg"
-    # st.image(st.session_state.img)
-    
-
-        ##rating = value given by user
-
-
-    ## toy story img = st.image("https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_FMjpg_UX1000_.jpg")
