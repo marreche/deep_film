@@ -10,3 +10,6 @@ url = f"mongodb+srv://{username}:{password}@datacluster.2umgq.mongodb.net/myFirs
 client = MongoClient(url)
 db = client["movies"]
 ratings = db.ratings_small
+ratings_new = db.ratings_new
+movies_metadata = db.movies_metadata
+predictions = db.predictions
