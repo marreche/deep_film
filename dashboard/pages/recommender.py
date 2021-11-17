@@ -3,7 +3,7 @@ import pandas as pd
 from support.movie_df_creation import movies_df
 from support.api_connection import insert_ratings
 from support.mongo_connection import predictions
-from support.model_functions_streamlit import SVD_prediction
+from support.model_functions_streamlit import SVDpp_prediction
 import numpy as np
 
 
@@ -40,7 +40,7 @@ def recommender():
             insert_ratings(ratings[i], movieIds[i], userId=userId)
         st.write("Ratings added to database...")
         st.write("Calculating recommendations...")
-        SVD_prediction()
+        SVDpp_prediction()
         preds_df = pd.DataFrame(list(predictions.find({'userId': userId}, {'_id': 0, 'movieId': 0, 'userId': 0})))
         preds_df = preds_df[['title', 'rating_prediction']]
         st.dataframe(preds_df)
