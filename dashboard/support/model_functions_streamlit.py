@@ -60,6 +60,7 @@ def SVD_prediction():
 
     hist_svd, pred_svd = get_top_n(predictions_svd, last_user, df_movies, df_user)
     pred_svd = pred_svd.dropna().reset_index().drop(columns=['genres', 'index'])
+    
     db.predictions.insert_many(pred_svd[:10].to_dict('records'))    
 
 
@@ -75,9 +76,8 @@ def SVDpp_prediction():
     
     hist_svdpp, pred_svdpp = get_top_n(predictions_svdpp, last_user, df_movies, df_user)
     pred_svdpp = pred_svdpp.dropna().reset_index().drop(columns=['userId', 'genres', 'index'])
-    pred_svdpp = pred_svdpp[['title', 'rating_prediction']]
     
-    return pred_svdpp
+    db.predictions.insert_many(pred_svdpp[:10].to_dict('records'))    
 
 
 
@@ -94,6 +94,6 @@ def NMF_prediction():
     hist_nmf, pred_nmf = get_top_n(predictions_nmf, last_user, df_movies, df_user)
     pred_nmf = pred_nmf.dropna().reset_index().drop(columns=['genres', 'index'])
     
-    return pred_nmf
+    db.predictions.insert_many(pred_nmf[:10].to_dict('records'))    
 
 
