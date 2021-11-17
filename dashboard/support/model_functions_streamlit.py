@@ -1,6 +1,6 @@
 import pandas as pd
 
-from support.df_creation_streamlit import df_user, df_movies
+from support.df_creation_streamlit import df_user, df_movies, last_user
 from support.mongo_connection import db
 
 
@@ -9,11 +9,6 @@ from surprise import Dataset, Reader
 from surprise.model_selection import train_test_split
 
 from collections import defaultdict
-
-
-
-## Get last userId   
-last_user = int(df_user.iloc[-1].userId)
 
 
 ##Prepare data for different model use

@@ -8,13 +8,13 @@ import numpy as np
 
 
 def get_movies():
-    movies = movies_df
+    movies = movies_df.sample(20)
     return movies
 
 movies = get_movies()
 movieId = []
 rating_array = []
-userId = 42
+userId = np.random.randint(700, 10000)
 
 
 def recommender():
@@ -22,7 +22,7 @@ def recommender():
     st.write("This movie recommendation system uses Singular Value Deomposition (SVD) to predict user ratings.")
     st.write("To calculate your tailored recommendations you must first rate these 20 movies down below.")
     st.write("Use the sliders below each movie poster to rate the movies. Once you're happy with your ratings, press the 'Get Recommendation' button at the bottom of the page. This will train the model with your ratings.")
-    st.write("Once the training is complete, a table will be displayed with up to five movie recommendations")
+    st.write("Once the training is complete, a table will be displayed with your movie recommendations")
     st.subheader("Enjoy!")
     st.header("Rate these movies:")
     for i in range(len(movies)):
@@ -35,8 +35,11 @@ def recommender():
     movieIds = movieId[:20]
     ratings = rating_array[-20:]
     if st.button("Get recommendation"):
+        st.write("Loading...")
         for i in range(len(movieIds)):
             insert_ratings(ratings[i], movieIds[i], userId=userId)
+        st.write("Ratings added to database...")
+        st.write("Calculating recommendations...")
         SVD_prediction()
         preds_df = pd.DataFrame(list(predictions.find({'userId': userId}, {'_id': 0, 'movieId': 0, 'userId': 0})))
         preds_df = preds_df[['title', 'rating_prediction']]

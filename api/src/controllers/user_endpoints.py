@@ -19,9 +19,9 @@ def add():
     })
     return {"state": "Rating successfully added!"}
 
-@app.route("/predictions",  methods = ["GET"])
-@serialize
-def get_predictions():
-    res = list(predictions.find())
-    return {"Predictions" : res}
+# @app.route("/predictions",  methods = ["GET"])
+# @serialize
+# def get_predictions():
+#     res = list(predictions.find())
+#     return {"Predictions" : res}
 

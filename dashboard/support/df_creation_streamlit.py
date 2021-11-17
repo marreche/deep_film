@@ -20,6 +20,8 @@ ratings_df = ratings_df.drop(columns=['_id', 'timestamp'])
 new_ratings_df = pd.DataFrame(list(ratings_new.find()))
 new_ratings_df = new_ratings_df.drop(columns=['_id'])
 
+last_user = int(new_ratings_df.iloc[-1].userId)
+
 df_user = ratings_df.append(new_ratings_df)
 df_user = df_user.reset_index().drop(columns=['index'])
 
@@ -35,7 +37,8 @@ df_movies = df_movies.drop(columns=['adult', 'belongs_to_collection', 'budget', 
 df_movies = df_movies.rename(columns={'id':'movieId'})
 df_movies = df_movies[["movieId", "title", "genres"]]
 df_movies['genres'] = ["".join(string) for string in df_movies['genres']]
-df_movies.drop(df_movies.index[19730],inplace=True)
-df_movies.drop(df_movies.index[29502],inplace=True)
-df_movies.drop(df_movies.index[35585],inplace=True)
+# df_movies.drop(df_movies.index[19730],inplace=True)
+# df_movies.drop(df_movies.index[29502],inplace=True)
+# df_movies.drop(df_movies.index[35585],inplace=True)
+df_movies.dropna(inplace=True)
 df_movies.movieId = df_movies.movieId.astype(np.int64)
