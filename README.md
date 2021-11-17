@@ -52,7 +52,7 @@ This project is complemented by its own API acting as an intermmediary between t
 
 The implementation of the Deep Film recommender system is hosted on a Streamlit dashboard.
 
-Click on link below to visit the dashboard where the recommender system is hosted :
+Click on link below to visit the dashboard:
 
 ## [Deep Film Dashboard]()
 
