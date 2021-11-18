@@ -1,6 +1,6 @@
 import requests
 
-url_main = "http://127.0.0.1:5000/"
+url_main = "https://deep-film-api.herokuapp.com"
 
 def get_movies():
     url = f"{url_main}/movies"
