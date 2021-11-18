@@ -12,8 +12,8 @@
     * [Movie Endpoints](#movie-endpoints)
     * [User Endpoints](#user-endpoints)
     * [Rating Endpoints](#rating-endpoints)
-* [Dashboard](#clipboard-streamlit-dashboard)
-* [Resources](#notebook_with_decorative_cover-resources)
+* [Streamlit](#clipboard-streamlit-dashboard)
+* [Resources](#notebook_with_decorative_cover-useful-resources)
 * [Contact](#envelope-contact)
 * [License](#key-license)
 
@@ -21,15 +21,15 @@
 
 This project consists of a Movie Recommender System using [The Movies Dataset](https://www.kaggle.com/rounakbanik/the-movies-dataset) from kaggle. This dataset contains metadata for all 45,000 movies listed in the Full MovieLens Dataset. As well as 26 million ratings from 270,000 users for all 45,000 movies. Ratings are on a scale of 1-5 and have been obtained from the official GroupLens website.
 
-The deep_film recommender system is supplemented by its very own MongoAtlas database, where all movie and user data is stored, an API for better connectivity and a Streamlit Dashboard. Down below you will find instructions to use both the Streamlit Dashboard as well as the API.
+The deep_film recommender system is supplemented by its very own MongoAtlas database, where all movie and user data is stored, an API for better connectivity and a Streamlit Dashboard for user interaction. Down below you will find instructions to use both the Streamlit Dashboard as well as the API.
 
-deep_film uses a Singular Value Decomposition (SVD) model as it harnessed the best results. K-Nearest Neighbours (KNN) was also tested. 
+deep_film uses a Singular Value Decomposition (SVD) algorithm as it harnessed the best results in the least amount of time. K-Nearest Neighbours (KNN) was also tested, as well as other matrix factorization based algorithms. SVD++ and NMF are both implemented but are not used in the final recommendation system for different reasons. SVD++ yielded better results than SVD however took an impractical amount of time to recommend films to new users. NMF gave objectively worse and fewer recommendations than SVD. 
 
 If you wish to know more about this project and the development process don't hesitate to send me an [email](#envelope-contact).
 
 ## :film_strip: Movie Recommender System
 
-To use my recommendation system you must first rate twenty movies on a scale from 1 to 5. After completion, the model will calculate up to 5 best rated movies that fit your preferences. Head over to the [Streamlit Dashboard](#streamlit-dashboard) section to learn more on how to use the recommender system.
+To use my recommendation system you must first rate twenty movies on a scale from 1 to 5. After completion, the algorithm will calculate up to 10 movies that fit your preferences. Head over to the [Streamlit Dashboard](#streamlit-dashboard) section to learn more on how to use my recommender system.
 
 ## :bulb: API 
 
@@ -66,13 +66,13 @@ This project is complemented by its own API acting as an intermmediary between t
 
 ## :clipboard: Streamlit Dashboard
 
-The implementation of the Deep Film recommender system is hosted on a Streamlit dashboard.
+The implementation of Deep Film is hosted on a Streamlit dashboard.
 
 Click on link below to visit the dashboard:
 
 ## [Deep Film Dashboard]()
 
-## :notebook_with_decorative_cover: Resources
+## :notebook_with_decorative_cover: Useful Resources
 
 [Surprise](https://surprise.readthedocs.io/en/stable/)
 
