@@ -1,5 +1,6 @@
 # <div align="center"> :movie_camera: deep_film </div>
 
+
 ![Alt](/images/movies_collage.jpg "Movies")
 
 
@@ -28,6 +29,7 @@ deep_film uses a Singular Value Decomposition (SVD) algorithm as it harnessed th
 If you wish to know more about this project and the development process don't hesitate to send me an [email](#envelope-contact).
 
 ## :film_strip: Movie Recommender System
+
 
 To use my recommendation system you must first rate twenty movies on a scale from 1 to 5. After completion, the algorithm will calculate up to 10 movies that fit your preferences. Head over to the [Streamlit Dashboard](#streamlit-dashboard) section to learn more on how to use my recommender system.
 
@@ -84,5 +86,9 @@ Click on link below to visit the dashboard:
 mauriarrechea@gmail.com
 ## :key: License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+
+<img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+
 
 <div align="right"><a href="#scroll-table-of-contents">&#11014; Back to contents</a></div>
