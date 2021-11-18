@@ -1,8 +1,7 @@
 import streamlit as st
 import pandas as pd
 from support.movie_df_creation import movies_df
-from support.api_connection import insert_ratings
-from support.mongo_connection import predictions
+from support.api_connection import insert_ratings, get_predictions
 from support.model_functions_streamlit import SVD_prediction
 import numpy as np
 
@@ -10,6 +9,15 @@ import numpy as np
 def get_movies():
     movies = movies_df.sample(20)
     return movies
+
+def get_pred_df():
+    preds_df = get_predictions()
+    preds_df = pd.DataFrame(preds_df)
+    preds_df = preds_df[['title', 'rating_prediction']]
+    preds_df.sort_values('rating_prediction', ascending=False, inplace=True)
+    preds_df = preds_df.reset_index().drop(columns=['index'])
+    preds_df.index += 1
+    return preds_df
 
 movies = get_movies()
 movieId = []
@@ -41,6 +49,5 @@ def recommender():
         st.write("Ratings added to database...")
         st.write("Calculating recommendations...")
         SVD_prediction()
-        preds_df = pd.DataFrame(list(predictions.find({}, {'_id': 0, 'movieId': 0, 'userId': 0}).sort('$natural', -1).limit(10)))
-        preds_df = preds_df[['title', 'rating_prediction']]
+        preds_df = get_pred_df()
         st.dataframe(preds_df)

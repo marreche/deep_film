@@ -7,8 +7,8 @@ import json
 @app.route("/movies")
 @serialize
 def movies():
-    all_movies = list(movies_metadata.find({}, {"_id": 0, "homepage": 0, "belongs_to_collection": 0}))
-    return {"all_movies" : all_movies}
+    movie_data = json.dumps(list(movies_metadata.find({}, {"_id": 0, "homepage": 0, "belongs_to_collection": 0})))
+    return movie_data
 
 @app.route("/movies/search")
 @serialize

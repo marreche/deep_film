@@ -3,6 +3,7 @@ from flask import request
 from src.utils.mongo_connection import ratings_new, predictions
 from src.utils.json_response import serialize
 import numpy as np
+import json
 
 @app.route("/add",  methods = ["GET", 'POST'])
 @serialize
@@ -19,9 +20,9 @@ def add():
     })
     return {"state": "Rating successfully added!"}
 
-# @app.route("/predictions",  methods = ["GET"])
-# @serialize
-# def get_predictions():
-#     res = list(predictions.find())
-#     return {"Predictions" : res}
+@app.route("/predictions",  methods = ["GET"])
+@serialize
+def get_predictions():
+    res = json.dumps(list(predictions.find({}, {'_id': 0, 'movieId': 0, 'userId': 0}).sort('$natural', -1).limit(10)))
+    return res
 

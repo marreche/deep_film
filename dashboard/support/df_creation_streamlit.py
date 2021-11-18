@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from support.mongo_connection import ratings, ratings_new, movies_metadata
+from support.api_connection import get_movies, get_ratings, get_new_ratings
 from ast import literal_eval
 
 
@@ -14,22 +14,24 @@ def extract_genres(x):
     return []
 
 
-ratings_df = pd.DataFrame(list(ratings.find()))
-ratings_df = ratings_df.drop(columns=['_id', 'timestamp'])
+ratings_df = get_ratings()
+ratings_df = pd.DataFrame(ratings_df)
+ratings_df = ratings_df.drop(columns=['timestamp'])
 
-new_ratings_df = pd.DataFrame(list(ratings_new.find()))
-new_ratings_df = new_ratings_df.drop(columns=['_id'])
+new_ratings_df = get_new_ratings()
+new_ratings_df = pd.DataFrame(new_ratings_df)
 
 last_user = int(new_ratings_df.iloc[-1].userId)
 
 df_user = ratings_df.append(new_ratings_df)
 df_user = df_user.reset_index().drop(columns=['index'])
 
-df_movies = pd.DataFrame(list(movies_metadata.find()))
+df_movies = get_movies()
+df_movies = pd.DataFrame(df_movies)
 literal_eval(df_movies['genres'].loc[0])
 df_movies['genres']= df_movies['genres'].apply(extract_genres)
-df_movies = df_movies.drop(columns=['adult', 'belongs_to_collection', 'budget', 'homepage',
-       'imdb_id', 'original_language', 'original_title', 'overview',
+df_movies = df_movies.drop(columns=['adult', 'budget',
+        'imdb_id', 'original_language', 'original_title', 'overview',
        'popularity', 'poster_path', 'production_companies',
        'production_countries', 'release_date', 'revenue', 'runtime',
        'spoken_languages', 'status', 'tagline', 'video',
