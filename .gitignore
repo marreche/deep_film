@@ -1,4 +1,4 @@
-data
 .ipynb_checkpoints
 .env
 __pycache__
+db
