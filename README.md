@@ -72,7 +72,7 @@ The implementation of Deep Film is hosted on a Streamlit dashboard.
 
 Click on link below to visit the dashboard:
 
-## [Deep Film Dashboard]()
+## [Deep Film Dashboard](https://deep-film-dashboard.herokuapp.com/)
 
 ## :notebook_with_decorative_cover: Useful Resources
 

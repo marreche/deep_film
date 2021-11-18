@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 
-movies = pd.read_csv("/home/marrechea/deep_film/data/movies_metadata.csv")
 movies_df = pd.DataFrame(np.array([
     ["The Shawshank Redemption","278", "https://m.media-amazon.com/images/I/71AzwgLT2WL._AC_SY679_.jpg"],
     ["Toy Story", "862", "https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_FMjpg_UX1000_.jpg"],
