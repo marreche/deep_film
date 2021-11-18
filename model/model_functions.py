@@ -1,7 +1,7 @@
 import pandas as pd
 
 from support_model.df_creation import df_user, df_movies
-from support_model.mongo_connection import db
+from support.mongo_connection import db
 
 
 from surprise import SVD, SVDpp, NMF
