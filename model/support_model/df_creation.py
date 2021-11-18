@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from support.mongo_connection import ratings, ratings_new, movies_metadata
+from support_model.mongo_connection import ratings, ratings_new, movies_metadata
 from ast import literal_eval
 
 
