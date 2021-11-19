@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 def get_top_50_movies():
-    metadata = pd.read_csv("../data/movies_metadata.csv")
+    metadata = pd.read_csv("../docs/data/movies_metadata.csv")
     C = metadata['vote_average'].mean()
     m = metadata['vote_count'].quantile(0.90)
     q_movies = metadata.copy().loc[metadata['vote_count'] >= m]

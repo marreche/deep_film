@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 
-movies = pd.read_csv("/home/marrechea/deep_film/data/movies_metadata.csv")
+movies = pd.read_csv("/home/marrechea/deep_film/docs/data/movies_metadata.csv")
 movies['overview'] = movies['overview'].fillna('')
 
 tfidf = TfidfVectorizer(stop_words= 'english')
