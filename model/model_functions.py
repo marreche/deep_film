@@ -54,7 +54,7 @@ def get_top_n(predictions, userId, df_movies, df_user, n=20):
 
 # -------------- Models returning a Dataframe with recommendations -----------------------
 
-def SVD_prediction():    
+def svd_prediction():    
     algo_SVD = SVD()
     algo_SVD.fit(trainset)
 
@@ -69,7 +69,7 @@ def SVD_prediction():
 
 
 
-def SVDpp_prediction():
+def svdpp_prediction():
     
     algo_svdpp = SVDpp()
     algo_svdpp.fit(trainset)
@@ -86,7 +86,7 @@ def SVDpp_prediction():
 
 
 
-def NMF_prediction():
+def nmf_prediction():
     
     algo_NMF = NMF()
     algo_NMF.fit(trainset)
