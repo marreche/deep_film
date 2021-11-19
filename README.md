@@ -1,7 +1,7 @@
 # <div align="center"> :movie_camera: deep_film </div>
 
 
-![Alt](/images/movies_collage.jpg "Movies")
+![Alt](docs/images/movies_collage.jpg "Movies")
 
 
 
