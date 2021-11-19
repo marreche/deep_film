@@ -26,6 +26,8 @@ The deep_film recommender system is supplemented by its very own MongoAtlas data
 
 deep_film uses a Singular Value Decomposition (SVD) algorithm as it harnessed the best results in the least amount of time. K-Nearest Neighbours (KNN) was also tested, as well as other matrix factorization based algorithms. SVD++ and NMF are both implemented but are not used in the final recommendation system for different reasons. SVD++ yielded better results than SVD however took an impractical amount of time to recommend films to new users. NMF gave objectively worse and fewer recommendations than SVD. 
 
+Both the API and the Dashboard are hosted on heroku servers, urls can be found on their respective sections.
+
 If you wish to know more about this project and the development process don't hesitate to send me an [email](#envelope-contact).
 
 ## :film_strip: Movie Recommender System
@@ -34,6 +36,9 @@ If you wish to know more about this project and the development process don't he
 To use my recommendation system you must first rate twenty movies on a scale from 1 to 5. After completion, the algorithm will calculate up to 10 movies that fit your preferences. Head over to the [Streamlit Dashboard](#streamlit-dashboard) section to learn more on how to use my recommender system.
 
 ## :bulb: API 
+
+## [Deep Film API](https://deep-film-api.herokuapp.com/)
+
 
 This project is complemented by its own API acting as an intermmediary between the MongoAtlas database and the Streamlit dashboard. If you wish to use the API directly, you may query the endpoints listed down below.
 
