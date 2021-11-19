@@ -47,7 +47,7 @@ def get_top_n(predictions, userId, df_movies, df_user, n=20):
     return rated_user, pred_user
 
 
-# -------------- Models returning a Dataframe with recommendations -----------------------
+# -------------- Models updating database with recommendations -----------------------
 
 def SVD_prediction():    
     algo_SVD = SVD()
