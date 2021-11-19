@@ -1,6 +1,6 @@
 from src.app import app
 from flask import request
-from src.utils.mongo_connection import ratings_new, predictions
+from support.mongo_connection import ratings_new, predictions
 from src.utils.json_response import serialize
 import numpy as np
 import json
