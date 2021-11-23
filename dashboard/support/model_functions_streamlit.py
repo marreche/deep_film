@@ -1,8 +1,6 @@
 import pandas as pd
 
 from support.df_creation_streamlit import df_user, df_movies, last_user
-from support.mongo_connection import db
-
 
 from surprise import SVD, SVDpp, NMF
 from surprise import Dataset, Reader
@@ -61,7 +59,7 @@ def svd_prediction():
     hist_svd, pred_svd = get_top_n(predictions_svd, last_user, df_movies, df_user)
     pred_svd = pred_svd.dropna().reset_index().drop(columns=['genres', 'index'])
     
-    db.predictions.insert_many(pred_svd[:10].to_dict('records'))    
+    return pred_svd[:10]
 
 
 
@@ -77,7 +75,7 @@ def svdpp_prediction():
     hist_svdpp, pred_svdpp = get_top_n(predictions_svdpp, last_user, df_movies, df_user)
     pred_svdpp = pred_svdpp.dropna().reset_index().drop(columns=['userId', 'genres', 'index'])
     
-    db.predictions.insert_many(pred_svdpp[:10].to_dict('records'))    
+    return pred_svdpp[:10]
 
 
 
@@ -94,6 +92,6 @@ def nmf_prediction():
     hist_nmf, pred_nmf = get_top_n(predictions_nmf, last_user, df_movies, df_user)
     pred_nmf = pred_nmf.dropna().reset_index().drop(columns=['genres', 'index'])
     
-    db.predictions.insert_many(pred_nmf[:10].to_dict('records'))    
+    return pred_nmf[:10]
 
 

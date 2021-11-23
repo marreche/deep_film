@@ -1,5 +1,5 @@
 from src.app import app
-from support.mongo_connection import movies_metadata
+from src.utils.mongo_connection import movies_metadata
 from flask import request
 from src.utils.json_response import serialize
 import json

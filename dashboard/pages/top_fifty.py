@@ -1,5 +1,5 @@
 import streamlit as st
-from model.top_fifty_rated_movies import get_top_50_movies
+from support.top_fifty_rated_movies import get_top_50_movies
 
 
 def fifty():

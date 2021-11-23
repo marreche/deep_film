@@ -1,5 +1,5 @@
 import streamlit as st
-from model.content_based_recommendation import get_recommendations
+from support.content_based_recommendation import get_recommendations
 
 def simple_recommender():
     st.title("Simple Recommender")
