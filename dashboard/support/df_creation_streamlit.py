@@ -5,6 +5,10 @@ from ast import literal_eval
 
 
 def extract_genres(x):
+    '''
+    Extracts top 3 genres from each movie
+    '''
+    
     x = literal_eval(x)
     if isinstance(x, list):
         genre_names = [i['name'] for i in x]

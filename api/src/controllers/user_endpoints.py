@@ -8,6 +8,10 @@ import json
 @app.route("/add",  methods = ["GET", 'POST'])
 @serialize
 def add():
+    '''
+    Add's new user ratings to Database collection "ratings_new"
+    '''
+    
     rating = request.args.get('rating')
     userId = request.args.get('userId')
     if not userId:
@@ -23,6 +27,10 @@ def add():
 @app.route("/predictions",  methods = ["GET"])
 @serialize
 def get_predictions():
+    '''
+    Returns all user predictions stored in predictions collection
+    '''
+    
     res = json.dumps(list(predictions.find({}, {'_id': 0, 'movieId': 0, 'userId': 0}).sort('$natural', -1).limit(10)))
     return res
 

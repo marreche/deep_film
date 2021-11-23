@@ -7,17 +7,12 @@ import numpy as np
 
 
 def get_movies():
+    '''
+    Get sample of 20 movies from movie pool, to display images.
+    '''
     movies = movies_df.sample(20)
     return movies
 
-# def get_pred_df():
-#     preds_df = get_predictions()
-#     preds_df = pd.DataFrame(preds_df)
-#     preds_df = preds_df[['title', 'rating_prediction']]
-#     preds_df.sort_values('rating_prediction', ascending=False, inplace=True)
-#     preds_df = preds_df.reset_index().drop(columns=['index'])
-#     preds_df.index += 1
-#     return preds_df
 
 movies = get_movies()
 movieId = []
@@ -26,6 +21,10 @@ userId = np.random.randint(700, 10000)
 
 
 def recommender():
+    '''
+    Recommender page in streamlit
+    '''
+    
     title = st.title("Recommender")
     st.write("This movie recommendation system uses Singular Value Deomposition (SVD) to predict user ratings.")
     st.write("To calculate your tailored recommendations you must first rate these 20 movies down below.")
@@ -49,4 +48,8 @@ def recommender():
         st.write("Ratings added to database...")
         st.write("Calculating recommendations...")
         preds_df = svd_prediction()
+        preds_df = preds_df[['title', 'rating_prediction']]
+        preds_df.sort_values('rating_prediction', ascending=False, inplace=True)
+        preds_df = preds_df.reset_index().drop(columns=['index'])
+        preds_df.index += 1
         st.dataframe(preds_df)

@@ -1,6 +1,10 @@
 import streamlit as st
 
 def home():
+    '''
+    Home streamlit page
+    '''
+    
     st.title("Deep Film Recommender System")
     st.write("Welcome to Deep Film, my own take on a movie recommender system")
     st.header("Usage")

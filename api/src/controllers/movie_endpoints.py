@@ -7,12 +7,20 @@ import json
 @app.route("/movies")
 @serialize
 def movies():
+    '''
+    Returns all movie data from Database.
+    '''
+    
     movie_data = json.dumps(list(movies_metadata.find({}, {"_id": 0, "homepage": 0, "belongs_to_collection": 0})))
     return movie_data
 
 @app.route("/movies/search")
 @serialize
 def search_movies():
+    '''
+    Enables the User to search movies by title.
+    '''
+    
     pattern = request.args.get("name")
     pattern_format = f".*{pattern.lower()}.*"
     res = movies_metadata.find(
@@ -24,6 +32,10 @@ def search_movies():
 @app.route("/movies/poster")
 @serialize
 def movies_poster_link():
+    '''
+    Returns poster url of specific movie
+    '''
+    
     pattern = request.args.get("name")
     res = movies_metadata.find(
         {"original_title": pattern,}, 

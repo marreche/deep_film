@@ -15,9 +15,14 @@ data = Dataset.load_from_df(df_user, reader)
 trainset, testset = train_test_split(data, test_size = .25)
 
 
-# ---------- Function to calculate predictions -----------------
 
 def get_top_n(predictions, userId, df_movies, df_user, n=20):
+    '''
+    Calculates predictions based on latest user ratings.
+    Returns two DataFrames:
+    - rated_user = ratings user has submitted.
+    - pred_user = Predictions calculated using SVD, based on ratings user has submitted.
+    '''
  
     ## Map the predictions to each user.
     top_n = defaultdict(list)
@@ -35,19 +40,22 @@ def get_top_n(predictions, userId, df_movies, df_user, n=20):
                         columns=["userId" ,"movieId","rating_prediction"])
     
     
-    #5. Return pred_usr, i.e. top N recommended movies with (merged) titles and genres. 
+    ## Return pred_usr, i.e. top N recommended movies with (merged) titles and genres. 
     pred_user = preds_df[preds_df["userId"] == (userId)].merge(df_movies, how = 'left', left_on = 'movieId', right_on = 'movieId')
             
-    #6. Return hist_usr, returns already rated movies by user.
+    ## Return hist_usr, returns already rated movies by user.
     rated_user = df_user[df_user.userId == (userId) ].sort_values("rating", ascending = False).merge\
     (df_movies, how = 'left', left_on = 'movieId', right_on = 'movieId')
     
     return rated_user, pred_user
 
 
-# -------------- Models updating database with recommendations -----------------------
 
-def svd_prediction():    
+def svd_prediction():
+    '''
+    Returns dataframe with top 10 predictions based on user preferences calculated with an SVD algorithm.
+    '''
+    
     algo_SVD = SVD()
     algo_SVD.fit(trainset)
 
@@ -64,6 +72,9 @@ def svd_prediction():
 
 
 def svdpp_prediction():
+    '''
+    Returns dataframe with top 10 predictions based on user preferences calculated with an SVD++ algorithm.
+    '''
     
     algo_svdpp = SVDpp()
     algo_svdpp.fit(trainset)
@@ -80,6 +91,9 @@ def svdpp_prediction():
 
 
 def nmf_prediction():
+    '''
+    Returns dataframe with top 10 predictions based on user preferences calculated with an NMF algorithm.
+    '''
     
     algo_NMF = NMF()
     algo_NMF.fit(trainset)
