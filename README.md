@@ -10,9 +10,6 @@
 * [About](#newspaper-about)
 * [Movie Recommender](#film_strip-movie-recommender)
 * [API](#bulb-api)
-    * [Movie Endpoints](#movie-endpoints)
-    * [User Endpoints](#user-endpoints)
-    * [Rating Endpoints](#rating-endpoints)
 * [Streamlit](#clipboard-streamlit-dashboard)
 * [Resources](#notebook_with_decorative_cover-useful-resources)
 * [Contact](#envelope-contact)
@@ -44,33 +41,86 @@ To use my recommendation system you must first rate twenty movies on a scale fro
 
 This project is complemented by its own API acting as an intermmediary between the MongoAtlas database and the Streamlit dashboard. If you wish to use the API directly, you may query the endpoints listed down below.
 
-### Movie Endpoints
-1. /movies
-- Returns all movie data in the database.
-2. /movies/search - GET
-- Params
-    - name -> Introduce name of desired movie to search. (Required)
-3. /movies/poster - GET
-- Params
-    - name -> Introduce name of desired movie to get link to poster. (Required)
-
-### User Endpoints
-1. /add - GET, POST
-- Params
-    - rating -> Introduce rating. (Required)
-    - userId -> Introduce userId. (Optional)
-    - movieId -> Introduce movieId. (Required)
-
-2. /predictions - GET
-- Returns all recommended predictions for Streamlit users.
+## Movie endpoint : Returns all movie data
+### Method: GET
+>```
+>/movies
+>```
 
 
-### Rating Endpoints
-1. /ratings - GET
-- Returns all past user ratings extracted from the "The Movies Dataset".
 
-2. /ratings/new - GET
-- Returns ratings added by users casting their ratings on streamlit dashboard.
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## Search movie endpoint : Returns info of searched movie
+### Method: GET
+>```
+>/movies/search?name
+>```
+### Query Params
+
+|Param|value|
+|---|---|
+|name (REQUIRED)|{desired movie}|
+
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## Poster endpoint: Returns desired movie poster
+### Method: GET
+>```
+>/movies/poster?name
+>```
+### Query Params
+
+|Param|value|
+|---|---|
+|name (REQUIRED)|{desired movie}|
+
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## User addition endpoint: Adds new user ratings
+### Method: GET & POST
+>```
+>/add?rating&userId&movieId
+>```
+### Query Params
+
+|Param|value|
+|---|---|
+|rating (REQUIRED)| {Rating from 1 to 5} |
+|userId| {Corresponding UserId}|
+|movieId (REQUIRED)| {Corresponding MovieId}|
+
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## Predictions endpoint: Returns all predictions in database
+### Method: GET
+>```
+>/predictions
+>```
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## Ratings endpoint: Returns all past user ratings
+### Method: GET
+>```
+>/ratings
+>```
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+
+## New ratings endpoint: Returns all new user ratings
+### Method: GET
+>```
+>/ratings/new
+>```
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
 
 
 ## :clipboard: Streamlit Dashboard
