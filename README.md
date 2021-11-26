@@ -24,7 +24,9 @@ This project consists of a Movie Recommender System using [The Movies Dataset](h
 
 The deep_film recommender system is supplemented by its very own MongoAtlas database, where all movie and user data is stored, an API for better connectivity and a Streamlit Dashboard for user interaction. Down below you will find instructions to use both the Streamlit Dashboard as well as the API.
 
-deep_film uses a Singular Value Decomposition (SVD) algorithm as it harnessed the best results in the least amount of time. K-Nearest Neighbours (KNN) was also tested, as well as other matrix factorization based algorithms. SVD++ and NMF are both implemented but are not used in the final recommendation system for different reasons. SVD++ yielded better results than SVD however took an impractical amount of time to recommend films to new users. NMF gave objectively worse and fewer recommendations than SVD. 
+deep_film uses a Singular Value Decomposition (SVD) algorithm as it harnessed the best results in the least amount of time. K-Nearest Neighbours (KNN) was also tested, as well as other matrix factorization based algorithms. SVD++ and NMF are both implemented but are not used in the final recommendation system for different reasons. SVD++ yielded better results than SVD however took an impractical amount of time to recommend films to new users. NMF gave objectively worse and fewer recommendations than SVD.
+
+Singular Value Decomposition (SVD) is a method used in linear algebra that is used as a dimensionality reduction technique in machine learning. SVD is a matrix factorisation technique, which reduces the number of features of a dataset. In the context of this movie recommender system, SVD is used as a collaborative filtering technique. It uses a matrix structure where each row represents a user, and each column represents an item. The elements of this matrix are the ratings that are given to items by users.
 
 Both the API and the Dashboard are hosted on heroku servers, urls can be found in their respective sections.
 
