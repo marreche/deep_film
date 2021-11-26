@@ -9,8 +9,8 @@
 
 * [About](#newspaper-about)
 * [Movie Recommender](#film_strip-movie-recommender-system)
-* [API](#bulb-deep-film-)
-* [Streamlit](#clipboard-deep-film-)
+* [API](#bulb-api)
+* [Streamlit](#clipboard-dashboard)
 * [Resources](#notebook_with_decorative_cover-useful-resources)
 * [Contact](#envelope-contact)
 * [License](#key-license)
@@ -35,7 +35,7 @@ If you wish to know more about this project and the development process don't he
 To use my recommendation system you must first rate twenty movies on a scale from 1 to 5. After completion, the algorithm will calculate up to 10 movies that fit your preferences. Head over to the [Streamlit Dashboard](#streamlit-dashboard) section to learn more on how to use my recommender system.
 
 
-## :bulb:  Deep Film [API](https://deep-film-api.herokuapp.com)
+## :bulb:  [API](https://deep-film-api.herokuapp.com)
 
 
 This project is complemented by its own API acting as an intermmediary between the MongoAtlas database and the Streamlit dashboard. If you wish to use the API directly, you may query the endpoints listed down below.
@@ -122,7 +122,7 @@ This project is complemented by its own API acting as an intermmediary between t
 ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
 
 
-## :clipboard: Deep Film [Dashboard](https://deep-film-dashboard.herokuapp.com/)
+## :clipboard:  [Dashboard](https://deep-film-dashboard.herokuapp.com/)
 
 The implementation of Deep Film is hosted on a Streamlit dashboard.
 
