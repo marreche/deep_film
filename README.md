@@ -91,7 +91,7 @@ This project is complemented by its own API acting as an intermmediary between t
 |Param|value|
 |---|---|
 |rating (REQUIRED)| {Rating from 1 to 5} |
-|userId| {Corresponding UserId}|
+|userId (OPTIONAL)| {Corresponding UserId}|
 |movieId (REQUIRED)| {Corresponding MovieId}|
 
 
